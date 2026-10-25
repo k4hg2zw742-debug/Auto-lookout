@@ -4,57 +4,103 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport"
-        content="width=device-width, initial-scale=1.0">
-  <title>Auto Lookout | Explore Cars</title>
+        content="width=device-width, initial-scale=1">
+  <title>Auto Lookout | The Showroom</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-  <nav>
-    <h2>AUTO<span>LOOKOUT</span></h2>
+  <nav class="navbar">
+    <a href="#home" class="logo">
+      AUTO<span>LOOKOUT</span>
+    </a>
+
     <div class="nav-links">
       <a href="#home">Home</a>
-      <a href="#explore">Explore Cars</a>
+      <a href="#showroom">Showroom</a>
       <a href="#about">About</a>
     </div>
   </nav>
 
-  <section class="hero" id="home">
-    <h1>THE WORLD OF AUTOMOBILES</h1>
-    <p>Discover the machines that move us.</p>
-    <a href="#explore" class="btn">
-      Explore Cars
-    </a>
-  </section>
+  <main id="home">
+    <section class="showroom" id="showroom">
 
-  <section id="explore" class="explore">
-    <h2>EXPLORE THE AUTOMOTIVE WORLD</h2>
-    <p>Discover performance, design,
-       technology and automotive history.</p>
+      <div class="showroom-image"
+           id="showroomImage"></div>
 
-    <div class="car-grid">
-      <div class="car-card">
-        <h3>Supercars</h3>
-        <p>Engineering without limits.</p>
+      <div class="showroom-overlay"></div>
+
+      <div class="showroom-content">
+        <p class="eyebrow">
+          AUTO LOOKOUT / THE SHOWROOM
+        </p>
+
+        <h1 id="carName">PORSCHE 911 GT3 RS</h1>
+
+        <p class="car-description"
+           id="carDescription">
+          Precision engineered for the track.
+        </p>
+
+        <div class="spec-grid">
+          <div>
+            <span>POWER</span>
+            <strong id="carPower">518 HP</strong>
+          </div>
+
+          <div>
+            <span>0–100 KM/H</span>
+            <strong id="carAcceleration">
+              3.2 S
+            </strong>
+          </div>
+
+          <div>
+            <span>TOP SPEED</span>
+            <strong id="carSpeed">296 KM/H</strong>
+          </div>
+        </div>
+
+        <div class="car-selector"
+             aria-label="Choose a car">
+          <button class="car-option active"
+                  data-car="porsche">
+            PORSCHE
+          </button>
+
+          <button class="car-option"
+                  data-car="ferrari">
+            FERRARI
+          </button>
+
+          <button class="car-option"
+                  data-car="lamborghini">
+            LAMBORGHINI
+          </button>
+        </div>
       </div>
 
-      <div class="car-card">
-        <h3>Luxury Cars</h3>
-        <p>Where comfort meets innovation.</p>
+      <div class="showroom-footer">
+        <span>01 / 03</span>
+        <span>EXPLORE THE MACHINE</span>
       </div>
+    </section>
 
-      <div class="car-card">
-        <h3>Classic Cars</h3>
-        <p>Legends that shaped history.</p>
-      </div>
-    </div>
-  </section>
+    <section class="intro" id="about">
+      <p class="eyebrow">BEYOND THE ORDINARY</p>
+      <h2>EVERY MACHINE HAS A STORY.</h2>
+      <p>
+        Discover extraordinary automobiles
+        through performance, engineering,
+        design and innovation.
+      </p>
+    </section>
+  </main>
 
-  <section id="about">
-    <h2>ABOUT AUTO LOOKOUT</h2>
-    <p>Your destination for discovering
-       the world of automobiles.</p>
-  </section>
+  <footer>
+    <span>AUTO LOOKOUT</span>
+    <span>BUILT FOR AUTOMOTIVE ENTHUSIASTS</span>
+  </footer>
 
   <script src="script.js"></script>
 </body>
