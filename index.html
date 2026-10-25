@@ -1,107 +1,64 @@
-
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport"
-        content="width=device-width, initial-scale=1">
-  <title>Auto Lookout | The Showroom</title>
-  <link rel="stylesheet" href="style.css?v=2">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#0b0d10">
+  <meta name="description" content="Auto Lookout — a curated exploration of automotive design and performance.">
+  <title>Auto Lookout — An Automotive Perspective</title>
+  <link rel="preconnect" href="https://images.unsplash.com">
+  <link rel="stylesheet" href="style.css?v=3">
+  <script src="script.js?v=3" defer></script>
 </head>
 <body>
-
-  <nav class="navbar">
-    <a href="#home" class="logo">
-      AUTO<span>LOOKOUT</span>
-    </a>
-
-    <div class="nav-links">
-      <a href="#home">Home</a>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header">
+    <a class="wordmark" href="#top" aria-label="Auto Lookout home">AUTO<span>LOOKOUT</span><span class="wordmark-dot">.</span></a>
+    <nav class="site-nav" aria-label="Main navigation">
       <a href="#showroom">Showroom</a>
-      <a href="#about">About</a>
-    </div>
-  </nav>
+      <a href="#collections">Collections</a>
+      <a href="#philosophy">Our perspective</a>
+    </nav>
+    <span class="header-edition">THE AUTOMOTIVE EDITION / 001</span>
+  </header>
 
-  <main id="home">
-    <section class="showroom" id="showroom">
-
-      <div class="showroom-image"
-           id="showroomImage"></div>
-
-      <div class="showroom-overlay"></div>
-
-      <div class="showroom-content">
-        <p class="eyebrow">
-          AUTO LOOKOUT / THE SHOWROOM
-        </p>
-
-        <h1 id="carName">PORSCHE 911 GT3 RS</h1>
-
-        <p class="car-description"
-           id="carDescription">
-          Precision engineered for the track.
-        </p>
-
-        <div class="spec-grid">
-          <div>
-            <span>POWER</span>
-            <strong id="carPower">518 HP</strong>
-          </div>
-
-          <div>
-            <span>0–100 KM/H</span>
-            <strong id="carAcceleration">
-              3.2 S
-            </strong>
-          </div>
-
-          <div>
-            <span>TOP SPEED</span>
-            <strong id="carSpeed">296 KM/H</strong>
-          </div>
-        </div>
-
-        <div class="car-selector"
-             aria-label="Choose a car">
-          <button class="car-option active"
-                  data-car="porsche">
-            PORSCHE
-          </button>
-
-          <button class="car-option"
-                  data-car="ferrari">
-            FERRARI
-          </button>
-
-          <button class="car-option"
-                  data-car="lamborghini">
-            LAMBORGHINI
-          </button>
+  <main id="main">
+    <section class="hero" id="top" aria-labelledby="hero-title">
+      <div class="hero-photo" id="heroPhoto" role="img" aria-label="Featured automotive photography"></div>
+      <div class="hero-shade"></div>
+      <div class="hero-content" id="showroom">
+        <div class="hero-overline"><span class="tiny-rule"></span> CURATED AUTOMOTIVE EXPERIENCES</div>
+        <p class="hero-kicker" id="carMaker">PORSCHE / GERMANY</p>
+        <h1 id="hero-title"><span id="carName">911 GT3 RS</span></h1>
+        <p class="hero-description" id="carDescription">Purpose, distilled into performance.</p>
+        <div class="hero-specs" aria-label="Featured vehicle specifications">
+          <div><span>POWER</span><strong id="carPower">518 hp</strong></div>
+          <div><span>0–100 KM/H</span><strong id="carAcceleration">3.2 s</strong></div>
+          <div><span>TOP SPEED</span><strong id="carSpeed">296 km/h</strong></div>
         </div>
       </div>
-
-      <div class="showroom-footer">
-        <span>01 / 03</span>
-        <span>EXPLORE THE MACHINE</span>
+      <div class="hero-bottom">
+        <div class="selector-label">SELECT A MACHINE <span id="carCounter">01 / 03</span></div>
+        <div class="car-selector" role="group" aria-label="Select featured vehicle">
+          <button class="car-option active" data-car="porsche" aria-pressed="true">01 <span>Porsche</span></button>
+          <button class="car-option" data-car="ferrari" aria-pressed="false">02 <span>Ferrari</span></button>
+          <button class="car-option" data-car="lamborghini" aria-pressed="false">03 <span>Lamborghini</span></button>
+        </div>
+        <a class="scroll-cue" href="#collections">DISCOVER MORE <span aria-hidden="true">↓</span></a>
       </div>
     </section>
 
-    <section class="intro" id="about">
-      <p class="eyebrow">BEYOND THE ORDINARY</p>
-      <h2>EVERY MACHINE HAS A STORY.</h2>
-      <p>
-        Discover extraordinary automobiles
-        through performance, engineering,
-        design and innovation.
-      </p>
+    <section class="intro section-shell" id="collections">
+      <div class="section-eyebrow"><span>01 / EXPLORE</span><span>THE COLLECTION</span></div>
+      <div class="intro-heading"><h2>Automobiles,<br><em>considered.</em></h2><p>Not just machines. Expressions of design, innovation and the relentless pursuit of something extraordinary.</p></div>
+      <div class="collection-grid">
+        <article class="collection-card collection-one"><div class="collection-image" role="img" aria-label="Performance car on the road"></div><div class="collection-caption"><span>01 / THE ART OF SPEED</span><h3>Performance</h3><p>Where precision meets exhilaration.</p></div></article>
+        <article class="collection-card collection-two"><div class="collection-image" role="img" aria-label="Classic automotive design"></div><div class="collection-caption"><span>02 / ENDURING ICONS</span><h3>Heritage</h3><p>Designs that outlast their era.</p></div></article>
+      </div>
     </section>
+
+    <section class="manifesto" id="philosophy"><div class="manifesto-inner"><span class="section-label">02 / OUR PERSPECTIVE</span><h2>Every detail<br>has a <em>purpose.</em></h2><p>Auto Lookout is a place to appreciate the thinking behind exceptional cars — the shapes, the engineering and the stories that make them memorable.</p><a href="#top" class="text-link">BACK TO THE SHOWROOM <span aria-hidden="true">↗</span></a></div></section>
   </main>
-
-  <footer>
-    <span>AUTO LOOKOUT</span>
-    <span>BUILT FOR AUTOMOTIVE ENTHUSIASTS</span>
-  </footer>
-
-  <script src="script.js?v=2"></script>
+  <footer class="site-footer"><a class="wordmark" href="#top">AUTO<span>LOOKOUT</span><span class="wordmark-dot">.</span></a><p>AN AUTOMOTIVE PERSPECTIVE</p><span>© <span id="year">2026</span> AUTO LOOKOUT</span></footer>
 </body>
 </html>
