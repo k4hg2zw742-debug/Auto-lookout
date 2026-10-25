@@ -24,8 +24,13 @@ function selectCar(index){
   const preload=new Image();preload.onload=apply;preload.onerror=apply;preload.src=car.image;
   if(preload.complete)apply();
 }
-buttons.forEach((button,index)=>button.addEventListener('click',()=>selectCar(index)));
-document.getElementById('previous').addEventListener('click',()=>selectCar(current-1));
-document.getElementById('next').addEventListener('click',()=>selectCar(current+1));
+buttons.forEach((button,index)=>button.addEventListener('click',()=>{selectCar(index);setPanel(false);}));
+const openButton=document.getElementById('openSelection');
+const panel=document.getElementById('manufacturerPanel');
+const closeButton=document.getElementById('closeSelection');
+function setPanel(open){panel.hidden=!open;openButton.setAttribute('aria-expanded',String(open));if(open)panel.querySelector('.car-option').focus();else openButton.focus();}
+openButton.addEventListener('click',()=>setPanel(panel.hidden));
+closeButton.addEventListener('click',()=>setPanel(false));
+document.addEventListener('keydown',event=>{if(event.key==='Escape'&&!panel.hidden)setPanel(false);});
 document.getElementById('year').textContent=new Date().getFullYear();
 selectCar(0);
