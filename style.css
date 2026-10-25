@@ -1,5 +1,10 @@
 
-/* AUTO LOOKOUT - MAIN DESIGN */
+:root {
+  --background: #090b0e;
+  --text: #ffffff;
+  --muted: #a6a8ad;
+  --accent: #ed3445;
+}
 
 * {
   margin: 0;
@@ -12,194 +17,267 @@ html {
 }
 
 body {
-  background: #080a0d;
-  color: #ffffff;
+  background: var(--background);
+  color: var(--text);
   font-family: Arial, Helvetica, sans-serif;
-  line-height: 1.6;
 }
 
-/* NAVIGATION */
+button, a {
+  -webkit-tap-highlight-color: transparent;
+}
 
-nav {
+.navbar {
+  height: 86px;
+  padding: 0 6%;
   display: flex;
-  justify-content: space-between;
   align-items: center;
-  padding: 25px 7%;
-  background: #101319;
-  position: sticky;
+  justify-content: space-between;
+  position: absolute;
   top: 0;
-  z-index: 100;
+  left: 0;
+  width: 100%;
+  z-index: 10;
+  background: rgba(9, 11, 14, 0.7);
 }
 
-nav h2 {
+.logo {
+  color: white;
+  text-decoration: none;
   font-size: 22px;
+  font-weight: 900;
   letter-spacing: 2px;
 }
 
-nav h2 span {
-  color: #e63946;
+.logo span {
+  color: var(--accent);
 }
 
 .nav-links {
   display: flex;
-  gap: 30px;
+  gap: 35px;
 }
 
 .nav-links a {
   color: white;
   text-decoration: none;
-  font-size: 14px;
+  font-size: 13px;
   transition: color 0.3s;
 }
 
 .nav-links a:hover {
-  color: #e63946;
+  color: var(--accent);
 }
 
-/* HERO SECTION */
+/* CINEMATIC SHOWROOM */
 
-.hero {
-  min-height: 85vh;
+.showroom {
+  min-height: 100svh;
+  position: relative;
   display: flex;
-  flex-direction: column;
   align-items: center;
-  justify-content: center;
-  text-align: center;
-  padding: 60px 20px;
-  background:
-    linear-gradient(
-      rgba(0,0,0,0.45),
-      rgba(0,0,0,0.85)
-    ),
-    url("https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=1800&q=85");
+  overflow: hidden;
+  padding: 130px 7% 90px;
+  isolation: isolate;
+}
+
+.showroom-image {
+  position: absolute;
+  inset: 0;
+  z-index: -2;
   background-size: cover;
   background-position: center;
+  transition: opacity 0.5s ease;
 }
 
-.hero h1 {
-  font-size: clamp(38px, 6vw, 85px);
+.showroom-overlay {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background: linear-gradient(
+    90deg,
+    rgba(0,0,0,0.94) 0%,
+    rgba(0,0,0,0.65) 45%,
+    rgba(0,0,0,0.15) 100%
+  );
+}
+
+.showroom-content {
+  width: 100%;
+  max-width: 850px;
+}
+
+.eyebrow {
+  color: var(--accent);
+  font-size: 12px;
+  letter-spacing: 3px;
+  font-weight: bold;
+  margin-bottom: 22px;
+}
+
+.showroom h1 {
+  font-size: clamp(42px, 6.5vw, 92px);
+  line-height: 0.98;
+  letter-spacing: -3px;
   font-weight: 900;
-  letter-spacing: -2px;
-  line-height: 1.1;
-  max-width: 1000px;
-  animation: fadeUp 1s ease;
+  max-width: 850px;
 }
 
-.hero p {
-  margin-top: 25px;
-  font-size: 19px;
-  color: #dddddd;
+.car-description {
+  color: #d0d0d0;
+  font-size: 18px;
+  margin-top: 28px;
 }
 
-.btn {
-  display: inline-block;
-  margin-top: 35px;
-  padding: 15px 35px;
-  background: #e63946;
-  color: white;
-  text-decoration: none;
+.spec-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 45px;
+  margin-top: 55px;
+  padding-top: 25px;
+  border-top: 1px solid #555;
+}
+
+.spec-grid div {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.spec-grid span {
+  color: #aaa;
+  font-size: 11px;
+  letter-spacing: 2px;
+}
+
+.spec-grid strong {
+  font-size: clamp(22px, 3vw, 34px);
+  font-weight: 800;
+}
+
+.car-selector {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 55px;
+}
+
+.car-option {
+  background: rgba(255,255,255,0.06);
+  color: #ddd;
+  border: 1px solid #555;
+  padding: 16px 22px;
+  cursor: pointer;
+  font-size: 11px;
+  letter-spacing: 1px;
   font-weight: bold;
   transition: 0.3s;
 }
 
-.btn:hover {
-  background: white;
-  color: black;
-  transform: translateY(-4px);
+.car-option:hover {
+  background: rgba(255,255,255,0.2);
 }
 
-/* EXPLORE SECTION */
+.car-option.active {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: white;
+}
 
-.explore {
-  padding: 110px 7%;
+.showroom-footer {
+  position: absolute;
+  bottom: 35px;
+  left: 7%;
+  right: 7%;
+  display: flex;
+  justify-content: space-between;
+  font-size: 11px;
+  letter-spacing: 2px;
+  color: #bbb;
+}
+
+/* INTRODUCTION */
+
+.intro {
   text-align: center;
+  padding: 140px 7%;
 }
 
-.explore h2,
-#about h2 {
-  font-size: clamp(28px, 4vw, 45px);
-  margin-bottom: 20px;
+.intro h2 {
+  font-size: clamp(32px, 5vw, 65px);
+  letter-spacing: -2px;
+  max-width: 800px;
+  margin: 0 auto 30px;
 }
 
-.explore > p {
-  color: #a8a8a8;
-  margin-bottom: 55px;
+.intro > p:last-child {
+  color: var(--muted);
+  max-width: 550px;
+  margin: auto;
+  line-height: 1.8;
 }
 
-.car-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 25px;
+footer {
+  padding: 35px 7%;
+  border-top: 1px solid #222;
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  color: #999;
+  font-size: 11px;
+  letter-spacing: 1px;
 }
 
-.car-card {
-  background: #15191f;
-  padding: 65px 25px;
-  border: 1px solid #282d35;
-  border-radius: 8px;
-  transition: 0.4s;
-  cursor: pointer;
-}
-
-.car-card:hover {
-  transform: translateY(-12px);
-  border-color: #e63946;
-  box-shadow: 0 20px 50px rgba(0,0,0,0.5);
-}
-
-.car-card h3 {
-  font-size: 27px;
-  margin-bottom: 12px;
-}
-
-.car-card p {
-  color: #aaaaaa;
-}
-
-/* ABOUT SECTION */
-
-#about {
-  padding: 100px 7%;
-  text-align: center;
-  background: #11151a;
-}
-
-#about p {
-  color: #aaaaaa;
-}
-
-/* ANIMATIONS */
-
-@keyframes fadeUp {
-  from {
-    opacity: 0;
-    transform: translateY(35px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-/* MOBILE RESPONSIVENESS */
+/* MOBILE */
 
 @media (max-width: 768px) {
-  nav {
+  .navbar {
+    padding: 20px 5%;
+    height: auto;
     flex-direction: column;
     gap: 20px;
   }
 
   .nav-links {
-    gap: 18px;
-    flex-wrap: wrap;
-    justify-content: center;
+    gap: 20px;
   }
 
-  .car-grid {
-    grid-template-columns: 1fr;
+  .showroom {
+    padding: 180px 6% 110px;
   }
 
-  .hero {
-    min-height: 75vh;
+  .showroom-overlay {
+    background: rgba(0,0,0,0.7);
+  }
+
+  .showroom h1 {
+    letter-spacing: -1px;
+  }
+
+  .spec-grid {
+    gap: 25px;
+    margin-top: 35px;
+  }
+
+  .car-selector {
+    margin-top: 35px;
+  }
+
+  .car-option {
+    padding: 13px 15px;
+  }
+
+  footer {
+    flex-direction: column;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  .showroom-image,
+  .car-option {
+    transition: none;
   }
 }
